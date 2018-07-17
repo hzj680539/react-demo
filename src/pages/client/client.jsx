@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Client extends Component {
   render() {
     return (
       <div>
-        <h1>List page</h1>
+        <h1>Client page</h1>
       </div>
     )
   }
 }
 
-export default Login
+export default Client

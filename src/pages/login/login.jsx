@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './custom.less';
+import './login.less';
 
-class Custom extends Component {
+class Login extends Component {
   render() {
     return (
       <div>
@@ -19,4 +19,4 @@ class Custom extends Component {
   }
 }
 
-export default Custom
+export default Login
