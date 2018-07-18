@@ -16,7 +16,7 @@ class movieItem extends Component {
           }
         </div>
         <div className="picture">
-          <img src={this.props.itemData.images.small} onClick={() => this.props.onClick} alt=""/>
+          <img src={this.props.itemData.images.small} alt=""/>
         </div>
       </section>
     )

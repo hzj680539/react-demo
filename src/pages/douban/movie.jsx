@@ -15,8 +15,8 @@ class Douban extends Component {
     this.initData()
   }
 
-  getMovieDetail = id => {
-    console.log('getMovieDetail CC')
+  getMovieItem = id => {
+    console.log('getMovieItem CC')
     this.props.getMovieDetail(id)
   }
 
@@ -27,7 +27,7 @@ class Douban extends Component {
         <div>
           {
             this.props.movieList.map((item, index) => {
-              return <MovieItem itemData={item} key={index} onClick={this.getMovieDetail.bind(this, item.id)} />
+              return <MovieItem itemData={item} key={index} onClick={this.getMovieItem.bind(this, item.id)} />
             })
           }
         </div>
