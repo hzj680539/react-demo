@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getMovieList } from '@/store/douban/action';
+import { getMovieList, getMovieDetail } from '@/store/douban/action';
 import DouHeader from '@/components/douban/douHeader'
 import MovieItem from '@/components/douban/movieItem'
 
@@ -15,6 +15,11 @@ class Douban extends Component {
     this.initData()
   }
 
+  getMovieDetail = id => {
+    console.log('getMovieDetail CC')
+    this.props.getMovieDetail(id)
+  }
+
   render () {
     return (
       <div>
@@ -22,7 +27,7 @@ class Douban extends Component {
         <div>
           {
             this.props.movieList.map((item, index) => {
-              return <MovieItem itemData={item} key={index}/>
+              return <MovieItem itemData={item} key={index} onClick={this.getMovieDetail.bind(this, item.id)} />
             })
           }
         </div>
@@ -31,4 +36,4 @@ class Douban extends Component {
   }
 }
 
-export default connect(state => ({movieList: state.movieData.movieList}), {getMovieList})(Douban)
+export default connect(state => ({movieList: state.movieData.movieList}), {getMovieList, getMovieDetail})(Douban)
