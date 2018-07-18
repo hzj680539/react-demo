@@ -1,0 +1,23 @@
+ul, li {
+  list-style: none;
+}
+.dou-header {
+  margin-bottom: 2vh;
+  padding: 10px;
+  background-color: darkgrey;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      a {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+        &.active {
+          color: gold;
+        }
+      }
+    }
+  }
+}
