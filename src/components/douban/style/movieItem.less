@@ -1,29 +1,28 @@
 .movie-item {
   margin: 10px auto;
-  .title {
-    margin-bottom: 3px;
-    padding-left: 5vw;
-    font-weight: bold;
-  }
+  padding: 0 20px;
   .label {
-    margin-bottom: 3px;
-    padding-left: 5vw;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
     .category {
-      display: inline-block;
-      margin-right: 20px;
+      margin-right: 10px;
       width: 50px;
-      height: 20px;
-      line-height: 20px;
       text-align: center;
+      color: #333;
       border-radius: 5px;
-      background-color: goldenrod;
+      background-color: lighten(goldenrod, 20%);
     }
   }
   .picture {
     text-align: center;
+    user-select: none;
     img {
       height: 400px;
       cursor: pointer;
+      user-select: none;
     }
   }
 }

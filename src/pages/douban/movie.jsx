@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovieList, getMovieDetail } from '@/store/douban/action';
+import { withRouter } from 'react-router-dom'
 import DouHeader from '@/components/douban/douHeader'
 import MovieItem from '@/components/douban/movieItem'
 
-class Douban extends Component {
+class Movie extends Component {
 
-  // 初始化数据
-  initData () {
+  componentDidMount () {
     this.props.getMovieList()
   }
 
-  componentWillMount () {
-    this.initData()
-  }
-
-  getMovieItem = id => {
-    console.log('getMovieItem CC')
-    this.props.getMovieDetail(id)
+  gotoMovieDetail = id => {
+    this.props.history.push(`/douban/movie/detail/${id}`)
   }
 
   render () {
@@ -27,7 +22,7 @@ class Douban extends Component {
         <div>
           {
             this.props.movieList.map((item, index) => {
-              return <MovieItem itemData={item} key={index} onClick={this.getMovieItem.bind(this, item.id)} />
+              return <MovieItem itemData={item} key={index} onClick={this.gotoMovieDetail.bind(this, item.id)} />
             })
           }
         </div>
@@ -36,4 +31,4 @@ class Douban extends Component {
   }
 }
 
-export default connect(state => ({movieList: state.movieData.movieList}), {getMovieList, getMovieDetail})(Douban)
+export default withRouter(connect(state => ({movieList: state.movieData.movieList}), {getMovieList, getMovieDetail})(Movie))

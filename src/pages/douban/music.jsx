@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import DouHeader from '@/components/douban/douHeader'
 
 class Music extends Component {
   render () {
     return (
       <div>
-        Music
+        <DouHeader/>
+        <h2>豆瓣音乐</h2>
       </div>
     )
   }

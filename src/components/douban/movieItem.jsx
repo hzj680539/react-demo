@@ -6,7 +6,7 @@ class movieItem extends Component {
   render () {
     return (
       <section className="movie-item">
-        <div className="title">{this.props.itemData.title}</div>
+        <h3>{this.props.itemData.title}</h3>
         <div className="label">
           <span>标签：</span>
           {
@@ -16,7 +16,7 @@ class movieItem extends Component {
           }
         </div>
         <div className="picture">
-          <img src={this.props.itemData.images.small} alt=""/>
+          <img src={this.props.itemData.images.small} onClick={this.props.onClick} alt=""/>
         </div>
       </section>
     )
