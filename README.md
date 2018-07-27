@@ -4,7 +4,3 @@ douban
   -- detail 详情页面
 client
   --list 查看客户
-
-add sth
-add abc
-add 123
