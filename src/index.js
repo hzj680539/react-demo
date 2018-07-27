@@ -4,6 +4,7 @@ import Route from './router/';
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import store from '@/store/store';
+import 'promise-polyfill/src/polyfill';
 import '@/assets/style/base.less'
 
 const render = Component => {

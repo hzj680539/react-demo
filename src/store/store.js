@@ -1,10 +1,11 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
+import * as login from './login/reducer'
 import * as douban from './douban/reducer'
 
 import thunk from 'redux-thunk'
 
 let store = createStore(
-  combineReducers({...douban}),
+  combineReducers({...login, ...douban}),
   applyMiddleware(thunk)
 )
 
